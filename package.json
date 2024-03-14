@@ -42,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Bindu272/google-book.git",
+  "license": "MIT"
 }
