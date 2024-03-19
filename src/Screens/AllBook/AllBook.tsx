@@ -16,6 +16,7 @@ interface Book {
 const AllBook: React.FC<{ searchQuery: string}> = ({ searchQuery }) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
+  const [recommendedBooks,setRecommendedBooks]=useState<string[]>([])
   // Effect hook to fetch books based on search query
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -64,6 +65,10 @@ const AllBook: React.FC<{ searchQuery: string}> = ({ searchQuery }) => {
       clearTimeout(timer);
     };
   }, [searchQuery]);
+const handleRecommend=(bookId:string)=>{
+setRecommendedBooks(prevRecommended=>[...prevRecommended,bookId])
+alert(`Book id: ${bookId} added to recommended list` )
+}
 
   return (
     <div>
@@ -96,16 +101,20 @@ const AllBook: React.FC<{ searchQuery: string}> = ({ searchQuery }) => {
                         ? book.volumeInfo.authors.join(', ')
                         : 'Unknown'}
                     </p>
+                  
                     <Link
                       to={`/book/${book.id}`}
                       className='btn btn-primary'
                     >
                       View Detail
                     </Link>
-                  
+                  <button onClick={()=>handleRecommend(book.id)} className='btn btn-danger'>{recommendedBooks.includes(book.id)?'Recommended':'Recommend'}</button>
+                    </div>
+                    
                   </div>
+                  
                 </div>
-              </div>
+        
             ))}
           </div>
         </div>
