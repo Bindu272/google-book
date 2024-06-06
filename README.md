@@ -3,7 +3,7 @@
 This is a simple web application for submitting and viewing book recommendations. Users can submit recommendations by providing the title, author, and their recommendation for the book. Submitted recommendations are displayed on the Recommendations page.
 
 # Hosting
-The project is hosted live at [Vercel](https://google-book-bww6hiwv1-bindu272s-projects.vercel.app/).
+The project is hosted live at [Vercel](https://google-book-qgrtxms75-bindu272s-projects.vercel.app/).
 
 **Technologies Used**
 React: Frontend library for building user interfaces.
